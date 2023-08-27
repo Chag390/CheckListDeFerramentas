@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CheckListDeFerramentas.MainPage">
+    <ScrollView>
+        <VerticalStackLayout BackgroundColor="#F1F9FC">
+            <Border BackgroundColor="#308C89" StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout >
+                    <Label Text="Check-list kit de ferramentas" FontSize="18" TextColor="#F1F9FC" Margin="70, 10 ,70,15" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <VerticalStackLayout>
+                <Label Text="Tipo de inspeção"
+                           FontSize="16"
+                           Margin="10"
+                           FontAttributes="Bold"/>
+                <HorizontalStackLayout>
+                    <CheckBox HorizontalOptions="Start" Color="#308C89"/>
+                    <Label Text="Diaria" VerticalOptions="Center" FontSize="15"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <CheckBox HorizontalOptions="Start" Color="#308C89"/>
+                    <Label Text="Mensal" VerticalOptions="Center" FontSize="15"/>
+                </HorizontalStackLayout>
+
+                <Label Text="Cor do mês"
+                       FontSize="16"
+                       Margin="10"
+                       FontAttributes="Bold" />
+                <Grid BackgroundColor="#F1F9FC" Padding="1" 
+                      ColumnDefinitions="Auto, Auto, 1*" 
+                      RowDefinitions="Auto, Auto,Auto,Auto, Auto, Auto "
+                      RowSpacing="2"
+                      ColumnSpacing="2">
+
+                    <CheckBox HorizontalOptions="Start" Color="#308C89"/>
+                    <Label Text="Vermelha - Janeiro, Maio e Setembro:" VerticalOptions="Center" FontSize="15" Grid.Column="1"/>
+                    <Border Grid.Column="2"  StrokeShape="RoundRectangle 5">
+                        <BoxView Color="Red" />
+                    </Border>
+
+                    <CheckBox HorizontalOptions="Start" Color="#308C89" Grid.Row="1"/>
+                    <Label Text="Azul - Fevereiro, Junho e Outubro:" VerticalOptions="Center" FontSize="15" Grid.Column="1" Grid.Row="1"/>
+                    <Border Grid.Column="2" Grid.Row="1"  StrokeShape="RoundRectangle 5">
+                        <BoxView Color="Blue" />
+                    </Border>
+
+                    <CheckBox HorizontalOptions="Start" Color="#308C89" Grid.Row="2"/>
+                    <Label Text="Verde - Março, Julho, e Novembro:" VerticalOptions="Center" FontSize="15" Grid.Column="1" Grid.Row="2"/>
+                    <Border Grid.Column="2" Grid.Row="2"  StrokeShape="RoundRectangle 5">
+                        <BoxView Color="Green" />
+                    </Border>
+
+                    <CheckBox HorizontalOptions="Start" Color="#308C89" Grid.Row="3"/>
+                    <Label Text="Amarela - Abril, Agosto e Dezembro:" VerticalOptions="Center" FontSize="15" Grid.Column="1" Grid.Row="3"/>
+                    <Border Grid.Column="2" Grid.Row="3"  StrokeShape="RoundRectangle 5">
+                        <BoxView Color="Yellow" />
+                    </Border>
+
+                    <CheckBox HorizontalOptions="Start" Color="#308C89" Grid.Row="4"/>
+                    <Label Text="Branca - Manutenção / Reparo:" VerticalOptions="Center" FontSize="15" Grid.Column="1" Grid.Row="4"/>
+                    <Border Grid.Column="2" Grid.Row="4"  StrokeShape="RoundRectangle 5">
+                        <BoxView Color="White" />
+                    </Border>
+
+                    <CheckBox HorizontalOptions="Start" Color="#308C89" Grid.Row="5"/>
+                    <Label Text="Preta - Descartar:" VerticalOptions="Center" FontSize="15" Grid.Column="1" Grid.Row="5"/>
+                    <Border Grid.Column="2" Grid.Row="5"  StrokeShape="RoundRectangle 5">
+                        <BoxView Color="Black" />
+                    </Border>
+
+
+                </Grid>
+                <Label Text="Responsável" 
+                       FontAttributes="Bold"
+                       FontSize="16"
+                       Margin="10"/>
+                <Border BackgroundColor="#308C89" Margin="10,0,10,0" StrokeShape="RoundRectangle 30">
+                    <HorizontalStackLayout>
+                        <Image Source="usuariobranco.png" WidthRequest="30" Margin="15,0,0,0"/>
+                        <Entry 
+                           Margin="10,5,10,8" FontSize="16" Placeholder="Nome do responsável" PlaceholderColor="#D5D5D5" TextColor="#F1F9FC">
+                            <Entry.Keyboard>
+                                <Keyboard x:FactoryMethod="Create">
+                                    <x:Arguments>
+                                        <KeyboardFlags>Suggestions,CapitalizeSentence</KeyboardFlags>
+                                    </x:Arguments>
+                                </Keyboard>
+                            </Entry.Keyboard>
+                        </Entry>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border BackgroundColor="#308C89" Margin="10,15,10,0" StrokeShape="RoundRectangle 30">
+                    <HorizontalStackLayout>
+                        <Image Source="calendario.png" WidthRequest="30" Margin="15,0,0,0"/>
+                        <DatePicker Margin="10,5,30,8" 
+                                FontSize="16"
+                                MinimumDate="{Binding MinDate}"
+                                MaximumDate="{Binding MaxDate}"
+                                Date="{Binding SelectedDate}" 
+                                TextColor="#F1F9FC"
+                                HorizontalOptions="Center"
+                                />
+                    </HorizontalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
