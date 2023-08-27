@@ -36,7 +36,7 @@
 
 		<!-- Splash Screen -->
 
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#308C89" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#0B58D8" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -51,7 +51,11 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\calendario.png" />
+	  <None Remove="Resources\Images\calendario2.png" />
 	  <None Remove="Resources\Images\calendario25verde.png" />
+	  <None Remove="Resources\Images\homem2.png" />
+	  <None Remove="Resources\Images\maps.png" />
+	  <None Remove="Resources\Images\maps2.png" />
 	  <None Remove="Resources\Images\usuariobranco.png" />
 	  <None Remove="Resources\Images\usuarioverde.png" />
 	</ItemGroup>
