@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CheckListDeFerramentas.MainPage">
     <ScrollView>
-        <VerticalStackLayout BackgroundColor="#E4F2FF">
+        <VerticalStackLayout BackgroundColor="#E4F2FF" HorizontalOptions="CenterAndExpand" >
             <Border BackgroundColor="#0B58D8" StrokeShape="RoundRectangle 10">
                 <VerticalStackLayout >
                     <Label Text="Check-list kit de ferramentas" FontSize="18" TextColor="#E4F2FF" Margin="70, 10 ,70,15" HorizontalOptions="Center"/>
@@ -73,7 +73,6 @@
                         <BoxView Color="Black" />
                     </Border>
 
-
                 </Grid>
 
                 <Border BackgroundColor="#31A9FF" Margin="10,10,10,0" StrokeShape="RoundRectangle 30">
@@ -92,9 +91,6 @@
                     </HorizontalStackLayout>
                 </Border>
 
-
-
-
                 <Border BackgroundColor="#31A9FF" Margin="10,15,10,0" StrokeShape="RoundRectangle 30">
                     <HorizontalStackLayout>
                         <Image Source="calendario2.png" WidthRequest="30" Margin="15,0,0,0"/>
@@ -111,8 +107,7 @@
                 <Border BackgroundColor="#31A9FF" Margin="10,15,10,0" StrokeShape="RoundRectangle 30">
                     <HorizontalStackLayout>
                         <Image Source="maps2.png" WidthRequest="35" Margin="15,0,0,0"/>
-                        <Entry 
-                           Margin="10,5,10,8" FontSize="16" Placeholder="Destino" PlaceholderColor="#D5D5D5" TextColor="#F1F9FC" >
+                        <Entry Margin="10,5,10,8" FontSize="16" Placeholder="Destino" PlaceholderColor="#D5D5D5" TextColor="#F1F9FC" HorizontalOptions="Center">
                             <Entry.Keyboard>
                                 <Keyboard x:FactoryMethod="Create">
                                     <x:Arguments>
@@ -124,17 +119,14 @@
                     </HorizontalStackLayout>
                 </Border>
 
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto" BackgroundColor="#E4F2FF">
 
-                <HorizontalStackLayout>
+                    <Button Text="Scan QRcode" BackgroundColor="#0B58D8" Margin="0,15,10,0" WidthRequest="170" HeightRequest="55"/>
 
-                    <Button Text="Scan QRcode" BackgroundColor="#0B58D8" Margin="10,15,10,0" WidthRequest="170" HeightRequest="55">
-                        
-                    </Button>
-
-                    <Border BackgroundColor="#31A9FF" Margin="10,15,10,0" StrokeShape="RoundRectangle 30" WidthRequest="170" HeightRequest="55">
-                        <Entry Margin="5,5,10,8" FontSize="16" Placeholder="Etiqueta" PlaceholderColor="#D5D5D5" TextColor="#F1F9FC" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Border BackgroundColor="#31A9FF" Margin="20,15,10,0" StrokeShape="RoundRectangle 30" WidthRequest="170" HeightRequest="55" Grid.Column="1">
+                        <Entry Margin="5,5,10,8" FontSize="16" Placeholder="Etiqueta" PlaceholderColor="#D5D5D5" TextColor="#F1F9FC" HorizontalOptions="Center" VerticalOptions="Center" />
                     </Border>
-                </HorizontalStackLayout>
+                </Grid>
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
